@@ -13,7 +13,7 @@ class LEDarray():
   
   def display(self):
     rows = [1,2,3,4,5,6,7,8] # change this value to pick which row the pattern appears on
-    for row in range(length(rows)):
+    for row in range(len(rows)):
       self.shifter.shiftByte(~LEDarray.pattern[part]) # load the row values
       self.shifter.shiftByte(1 << (row-1)) # select the given row
 
