@@ -14,7 +14,7 @@ class LEDarray():
     self.shifter = Shifter(data, latch, clock)
   
   def display(self, pat): # display given part of a pattern
-    for row in range(len(rows)):
+    for row in range(len(self.rows)):
       self.shifter.shiftByte(~LEDarray.pattern[pat]) # load the row values
       self.shifter.shiftByte(1 << (row-1)) # select the given row
       self.shifter.ping(self.shifter.latchPin)
