@@ -13,22 +13,20 @@ class LEDarray():
     self.shifter = Shifter(data, latch, clock)
   
   def display(self, pat): # display given part of a pattern
-    row = 5
-    #rows = [1,2,3,4,5,6,7,8] # change this value to pick which row the pattern appears on
-    #for row in range(len(rows)):
-    self.shifter.shiftByte(~LEDarray.pattern[pat]) # load the row values
-    self.shifter.shiftByte(1 << (row-1)) # select the given row
-    self.shifter.ping(self.shifter.latchPin)
+    rows = [1,2,3,4,5,6,7,8] # change this value to pick which row the pattern appears on
+    for row in range(len(rows)):
+      self.shifter.shiftByte(~LEDarray.pattern[pat]) # load the row values
+      self.shifter.shiftByte(1 << (row-1)) # select the given row
+      self.shifter.ping(self.shifter.latchPin)
 
 dataPin, latchPin, clockPin = 18, 19, 26
 
 theLEDarray = LEDarray(dataPin, latchPin, clockPin)
 
-sequence = [8, 6, 7, 5, 3, 0, 9]
 
 while True:
-  for n in range(len(sequence)):
+  for n in range(8):
     theLEDarray.display(n)
-    sleep(0.4)
+    sleep(0.001)
 
 #trying to get it to do the same thing as example code but its not working
