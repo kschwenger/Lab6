@@ -18,10 +18,10 @@ class LEDarray():
       self.shifter.shiftByte(~LEDarray.pattern[row-1]) # load the row values
       self.shifter.shiftByte(1 << (row-1)) # select the given row
 
-dataPin, latchPin, clockPin = 18, 23, 24
+dataPin, latchPin, clockPin = 18, 19, 26
 
 theLEDarray = LEDarray(dataPin, latchPin, clockPin)
 
 while True:
   theLEDarray.display()
-  sleep(1)
+  sleep(.001)
