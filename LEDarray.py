@@ -27,4 +27,4 @@ theLEDarray = LEDarray(dataPin, latchPin, clockPin)
 while True:
   for n in range(8):
     theLEDarray.display(n)
-    sleep(.001)
+    sleep(0.4)
