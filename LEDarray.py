@@ -28,3 +28,5 @@ while True:
   for n in range(8):
     theLEDarray.display(n)
     sleep(0.4)
+
+#trying to get it to do the same thing as example code but its not working
