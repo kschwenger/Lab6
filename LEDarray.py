@@ -17,6 +17,7 @@ class LEDarray():
     for row in range(len(rows)):
       self.shifter.shiftByte(~LEDarray.pattern[row-1]) # load the row values
       self.shifter.shiftByte(1 << (row-1)) # select the given row
+      self.shifter.ping(self.shifter.latchPin)
 
 dataPin, latchPin, clockPin = 18, 23, 24
 
