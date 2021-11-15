@@ -28,6 +28,8 @@ while True:
   else:
     y += randint(-1,1)
   
+  for i in range(8):
+    theLED8x8.pattern[i] = 0b00000000
   theLED8x8.pattern[y] = 1 << x #change the yth row to be x
 
   sleep(.1)
