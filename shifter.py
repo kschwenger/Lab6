@@ -1,4 +1,4 @@
-# Shifter class
+#  Shifter class
 
 import RPi.GPIO as GPIO
 import time
