@@ -28,4 +28,4 @@ while True:
   else:
     y += randint(-1,1)
   
-  sleep(.7)
+  sleep(.1)
