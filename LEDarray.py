@@ -1,7 +1,7 @@
 #LEDarray class
 
 from time import sleep
-from shifter import Shifter
+from shifter import Shifter # extend by composition
 
 
 class LEDarray():
@@ -19,15 +19,4 @@ class LEDarray():
     self.shifter.shiftByte(~LEDarray.pattern[pat]) # load the row values
     self.shifter.shiftByte(1 << (row-1)) # select the given row
     self.shifter.ping(self.shifter.latchPin)
-
-dataPin, latchPin, clockPin = 18, 19, 26
-
-theLEDarray = LEDarray(dataPin, latchPin, clockPin)
-
-
-while True:
-  for n in range(8):
-    theLEDarray.display(n)
-    sleep(0.001)
-
 #trying to get it to do the same thing as example code but its not working
