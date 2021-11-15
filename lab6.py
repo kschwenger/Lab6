@@ -33,6 +33,7 @@ try:
 
     sleep(.1)
 except KeyboardInterrupt: # if user hits ctrl-C
+  print('\nExiting')
 except Exception as e:   # catch everything, just in case
   print(e)               # delete once code is debugged
   theLED8x8.d.terminate()      # terminate the process
