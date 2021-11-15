@@ -10,14 +10,10 @@ pattern = [0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b0000000
 
 x = randint(0, 7) #random starting position
 y = randint(0, 7)
-pattern[y] = 1 << x
 
-#stepX = randint(-1,1)
-#stepY = randint(-1,1)
+while True:
+  pattern[y] = 1 << x #change the yth row to be x
+  theLED8x8.display(pattern)
 
-#x += stepX
-
-
-
-
-theLED8x8.display(pattern)
+  x += randint(-1,1)
+  y =+ randint(-1,1)
