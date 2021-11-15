@@ -4,7 +4,7 @@ from time import sleep
 from shifter import Shifter # extend by composition
 
 
-class LED8x8(multiprocessing.Process):
+class LED8x8():
   'Class for controlling an array of LEDs'
 
   def __init__(self, data, latch, clock):
