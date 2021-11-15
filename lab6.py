@@ -1,11 +1,11 @@
 from time import sleep
-from LEDarray import LEDarray
+from LED8x8 import LED8x8
 
 dataPin, latchPin, clockPin = 18, 19, 26
 
-theLEDarray = LEDarray(dataPin, latchPin, clockPin)
+theLED8x8 = LED8x8(dataPin, latchPin, clockPin)
 
 while True:
   #for n in range(8):
-  theLEDarray.display()
+  theLED8x8.display()
     #sleep(0.001)
