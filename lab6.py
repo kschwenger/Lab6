@@ -10,7 +10,7 @@ x = randint(0, 7) #random starting position
 y = randint(0, 7)
 
 while True:
-  theLED8x8.display(pattern)  #display the pattern on the led array
+  theLED8x8.display()  #display the pattern on the led array
 
   if x < 1: #prevent position from going outside of 8x8
     x += randint(0,1)
