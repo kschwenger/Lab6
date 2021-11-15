@@ -4,12 +4,14 @@ from random import randint
 
 dataPin, latchPin, clockPin = 18, 19, 26
 
-theLED8x8 = LED8x8(dataPin, latchPin, clockPin)
+
 
 x = randint(0, 7) #random starting position
 y = randint(0, 7)
 
 while True:
+  theLED8x8 = LED8x8(dataPin, latchPin, clockPin, p)
+  
   theLED8x8.display()  #display the pattern on the led array
 
   if x < 1: #prevent position from going outside of 8x8
@@ -26,7 +28,7 @@ while True:
   else:
     y += randint(-1,1)
   
-  pattern[y] = 1 << x #change the yth row to be x
+  theLED8x8.pattern[y] = 1 << x #change the yth row to be x
 
   sleep(.1)
 #try with multi

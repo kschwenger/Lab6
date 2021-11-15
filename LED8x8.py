@@ -6,14 +6,13 @@ from shifter import Shifter # extend by composition
 
 class LED8x8(multiprocessing.Process):
   'Class for controlling an array of LEDs'
+  
+  pattern = multiprocessing.Array('i',[0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000])  #start empty
 
-  pattern = multiprocessing.Array('int',[0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000])  #start empty
-
-  def __init__(self, data, latch, clock):
+  def __init__(self, data, latch, clock, process_name):
+    multiprocessing.Process.__init__(self, name=process_name, target=self.display, args=(self.pattern,))
     self.shifter = Shifter(data, latch, clock)
-    p = multiprocessing.Process(target=self.display, args=(self.pattern,))
-    p.daemon = True
-    p.start
+
   
   def display(self): # display given part of a pattern
     #while True:
