@@ -7,7 +7,8 @@ from shifter import Shifter # extend by composition
 class LED8x8():
   'Class for controlling an array of LEDs'
 
-  pattern = [0b00111100] #, 0b01000010, 0b10100101, 0b10000001, 0b10100101, 0b10011001, 0b01000010, 0b00111100]
+  #pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001, 0b10100101, 0b10011001, 0b01000010, 0b00111100]
+  pattern = [0b10000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000]
 
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock)
