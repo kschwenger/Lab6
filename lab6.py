@@ -32,9 +32,8 @@ try:
     theLED8x8.pattern[y] = 1 << x #turn on xth bit in yth row 
 
     sleep(.1)
-except KeyboardInterrupt: # if user hits ctrl-C
-  print('\nExiting')
 except Exception as e:   # catch everything, just in case
-  print(e)               # delete once code is debugged
   theLED8x8.d.terminate()      # terminate the process
   theLED8x8.d.join(2)          # wait up to 2 sec for process termination before ending code
+except KeyboardInterrupt: # if user hits ctrl-C
+  print('\nExiting')
