@@ -12,13 +12,13 @@ y = randint(0, 7)
 while True:
   pattern = [0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000]  #start empty
   pattern[y] = 1 << x #change the yth row to be x
-  theLED8x8.display(pattern)
+  theLED8x8.display(pattern)  #display the pattern on the led array
 
-  if x < 1:
+  if x < 1: #prevent position from going outside of 8x8
     x += randint(0,1)
-  elif x > 6:
+  elif x > 6:  
     x += randint(-1,0)
-  else:
+  else: #random step
     x += randint(-1,1)
   
   if y < 1:
@@ -28,4 +28,4 @@ while True:
   else:
     y += randint(-1,1)
   
-  sleep(0.1)
+  sleep(.7)
