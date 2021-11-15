@@ -5,7 +5,7 @@ dataPin, latchPin, clockPin = 18, 19, 26
 
 theLEDarray = LEDarray(dataPin, latchPin, clockPin)
 
-sequence = [8, 6, 7, 5, 3, 0, 9]
+sequence = [7, 6, 7, 5, 3, 0, 9]
 
 while True:
   for n in range(len(sequence)):
