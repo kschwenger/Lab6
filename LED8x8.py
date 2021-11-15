@@ -4,14 +4,14 @@ from time import sleep
 from shifter import Shifter # extend by composition
 
 
-class LED8x8(multiprocessing.Process):
+class LED8x8()):
   'Class for controlling an array of LEDs'
 
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock)
-    self.p = multiprocessing.Process.__init__(self, target=self.display)#, args=(pattern,))
-    self.p.daemon = True
-    self.p.start
+    p = multiprocessing.Process(self, target=self.display, args=(pattern,))
+    p.daemon = True
+    p.start
   
   def display(self, pattern): # display given part of a pattern
     #while True:
