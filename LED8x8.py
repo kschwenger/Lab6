@@ -17,8 +17,8 @@ class LED8x8(multiprocessing.Process):
   
   def display(self): # display given part of a pattern
     #while True:
-      for row in range(len(pattern)):
-        self.shifter.shiftByte(~pattern[row]) # load the row values
+      for row in range(len(self.pattern)):
+        self.shifter.shiftByte(~self.pattern[row]) # load the row values
         self.shifter.shiftByte(1 << (7 - row)) # select the given row
         self.shifter.ping(self.shifter.latchPin)
         sleep(0.001)
