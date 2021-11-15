@@ -14,7 +14,7 @@ class LED8x8():
   
   def display(self): # display given part of a pattern
     while True:
-      for row in range(len(pattern)):
+      for row in range(len(self.pattern)):
         self.shifter.shiftByte(~LED8x8.pattern[row]) # load the row values
         self.shifter.shiftByte(1 << (7 - row)) # select the given row
         self.shifter.ping(self.shifter.latchPin)
