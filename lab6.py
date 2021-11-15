@@ -27,8 +27,8 @@ while True:
   else:
     y += randint(-1,1)
   
-  #for i in range(8):
-    #theLED8x8.pattern[i] = 0b00000000 #reset pattern to turn all LEDs off
+  for i in range(8):
+    theLED8x8.pattern[i] = 0b00000000 #reset pattern to turn all LEDs off
   theLED8x8.pattern[y] = 1 << x #turn on xth bit in yth row 
 
   sleep(.1)

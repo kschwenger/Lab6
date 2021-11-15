@@ -16,7 +16,7 @@ class LED8x8(multiprocessing.Process):
     self.shifter = Shifter(data, latch, clock)
 
   
-  def display(self): # display given part of a pattern
+  def display(self, pattern): # display given part of a pattern
     #while True:
       for row in range(len(self.pattern)):
         self.shifter.shiftByte(~self.pattern[row]) # load the row values
