@@ -4,7 +4,7 @@ from random import randint
 
 dataPin, latchPin, clockPin = 18, 19, 26
 
-theLED8x8 = LED8x8(dataPin, latchPin, clockPin, 'p')
+theLED8x8 = LED8x8(dataPin, latchPin, clockPin)
 
 x = randint(0, 7) #random starting position
 y = randint(0, 7)
