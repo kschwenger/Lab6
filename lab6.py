@@ -10,9 +10,7 @@ x = randint(0, 7) #random starting position (x = column, y = row)
 y = randint(0, 7)
 
 try:
-  
   while True:
-  
     if x < 1: #prevent position from going outside of 8x8
       x += randint(0,1)
     elif x > 6:  
@@ -27,11 +25,12 @@ try:
     else:
       y += randint(-1,1)
   
-    for i in range(8):
-      theLED8x8.pattern[i] = 0b00000000 #reset pattern to turn all LEDs off
+    #for i in range(8):
+      #theLED8x8.pattern[i] = 0b00000000 #reset pattern to turn all LEDs off
     theLED8x8.pattern[y] = 1 << x #turn on xth bit in yth row 
 
-    sleep(.1)
+    sleep(.1) #time step = 0.1 s
+
 except Exception as e:   # catch everything, just in case
   theLED8x8.d.terminate()      # terminate the process
   theLED8x8.d.join(2)          # wait up to 2 sec for process termination before ending code
